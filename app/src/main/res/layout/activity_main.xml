@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.a10835.easywol.activity.HomeActivity">
 
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bootom_navigationview_tab"
         android:layout_width="match_parent"
@@ -16,6 +17,18 @@
         app:menu="@menu/tab_navigation_items">
 
     </android.support.design.widget.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/fl_fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bootom_navigationview_tab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
 
 </android.support.constraint.ConstraintLayout>
