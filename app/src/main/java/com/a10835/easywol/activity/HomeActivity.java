@@ -102,6 +102,8 @@ public class HomeActivity extends AppCompatActivity {
 
         }
     }
+
+
     //隐藏全部的Fragment
     public void hideAllFragment(){
         if (homeFragment != null){

@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">EasyWol</string>
+    <string name="app_name">轻松唤醒</string>
     <string name="menu_homepage">主页</string>
     <string name="menu_add">添加</string>
     <string name="menu_mine">我的</string>
+    <string name="splash_slogn">轻松生活，轻松唤醒</string>
 </resources>
