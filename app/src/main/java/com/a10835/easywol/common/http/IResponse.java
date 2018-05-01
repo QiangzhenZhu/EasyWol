@@ -6,7 +6,7 @@ package com.a10835.easywol.common.http;
 
 public interface IResponse {
     //返回状态码
-    int getCode();
+    public int getCode();
     //返回消息的内容
-    String getData();
+    public String getData();
 }

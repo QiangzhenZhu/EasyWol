@@ -1,0 +1,17 @@
+http://eu.httpbin.org/get?id=2920
+GET
+0
+HTTP/1.1 200 OK
+12
+Connection: keep-alive
+Server: gunicorn/19.7.1
+Date: Tue, 01 May 2018 07:54:02 GMT
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+X-Powered-By: Flask
+X-Processed-Time: 0
+Content-Length: 295
+Via: 1.1 vegur
+OkHttp-Sent-Millis: 1525161240512
+OkHttp-Received-Millis: 1525161240780

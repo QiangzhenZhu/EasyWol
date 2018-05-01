@@ -4,4 +4,7 @@
     <string name="menu_add">添加</string>
     <string name="menu_mine">我的</string>
     <string name="splash_slogn">轻松生活，轻松唤醒</string>
+    <string name="et_login_phone_string">请输入手机号</string>
+    <string name="et_login_password_string">请输入密码</string>
+    <string name="btn_login">登录</string>
 </resources>
