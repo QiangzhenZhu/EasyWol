@@ -12,9 +12,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.a10835.easywol.R;
+import com.tencent.bugly.crashreport.CrashReport;
 
-public class SplashActivity extends AppCompatActivity {
-    private Context mContext;
+import cn.bmob.v3.BmobUser;
+
+public class SplashActivity extends BaseActivity {
     private ImageView mAnimateImage;
 
     @Override
@@ -26,18 +28,34 @@ public class SplashActivity extends AppCompatActivity {
         mAnimateImage = findViewById(R.id.iv_splash);
         mAnimateImage.setImageDrawable(animatedVectorDrawable);
         animatedVectorDrawable.start();
+    }
 
+    @Override
+    public void setEevent() {
         //延迟1.5s启动跳转新活动
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(mContext,LoginActivity.class);
-                startActivity(intent);
-                finish();
+                BmobUser bmobUser = BmobUser.getCurrentUser();
+                if(bmobUser != null){
+                    Intent intent = new Intent(mContext,HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    //缓存用户对象为空时， 可打开用户注册界面…
+                    Intent intent = new Intent(mContext,LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         },1500);
+    }
 
-
+    @Override
+    public void initData() {
 
     }
+
+
 }

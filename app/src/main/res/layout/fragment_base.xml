@@ -12,7 +12,7 @@
     <android.support.design.widget.AppBarLayout
         android:background="@color/bg_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <android.support.v7.widget.Toolbar
             android:id="@+id/tool_bar"
             android:layout_width="match_parent"
@@ -20,8 +20,10 @@
             android:background="@color/white"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
             >
             <TextView
+                android:id="@+id/tv_title_tool_bar"
                 android:text="@string/tool_bar_homepage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,24 +32,32 @@
                 android:textColor="#616161"
                 android:textStyle="bold"
                 />
+            <FrameLayout
+                android:id="@+id/fm_tool_bar_icon"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_tool_bar_icon"
+                android:layout_width="50dp"
+                android:layout_height="32dp">
+                <ImageView
+                    android:id="@+id/iv_icon_tool_bar"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_gravity="center"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp" />
+            </FrameLayout>
+
 
         </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:textColor="#616161"
-                android:text="HomePage" />
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
         </FrameLayout>
 
 
 
-    </android.support.design.widget.AppBarLayout>
+
 </android.support.design.widget.CoordinatorLayout>

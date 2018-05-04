@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context="com.a10835.easywol.activity.RegisterActivity">
+    <ImageView
+        android:id="@+id/btn_back"
+        android:src="@drawable/back"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="24dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp" />
+
+    <TextView
+        android:layout_marginTop="68dp"
+        android:layout_marginLeft="38dp"
+        android:text="@string/tv_forget_pass"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.a10835.easywol.view.XEditText
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:id="@+id/et_find_password_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_login_phone"
+        android:layout_marginTop="64dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:hint="@string/et_login_phone_string"
+        android:singleLine="true"
+        android:inputType="number"
+        android:textCursorDrawable="@drawable/xedit_curson_drawable"
+        android:theme="@style/XEditTextTheme"
+        android:textColorHint="@color/white"
+        />
+    <TextView
+        android:id="@+id/btn_next"
+        android:text="@string/et_register_next"
+        android:gravity="center"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="38dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@drawable/bg_btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

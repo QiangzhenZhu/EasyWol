@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#3DAFFF</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorDarkWhite">#94CCF8</color>
+    <color name="white">#ffffff</color>
+    <color name="bg_background">#E9E9E9</color>
+    <color name="pink">#ff6ec7</color>
+    <color name="blue">#32cd99</color>
+    <color name="ching">#00ffff</color>
+    <color name="red">#ff00ff</color>
 </resources>

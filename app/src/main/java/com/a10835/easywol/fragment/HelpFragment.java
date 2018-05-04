@@ -4,18 +4,23 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.a10835.easywol.R;
+import com.a10835.easywol.utils.LogUtil;
 
 /**
  * Created by 10835 on 2018/4/15.
  */
 
-public class AddFragment extends Fragment {
+public class HelpFragment extends BaseFragment {
 
     private Context mContext;
     @Override
@@ -24,11 +29,20 @@ public class AddFragment extends Fragment {
         mContext = getActivity();
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.add_fragment,container,false);
+    public void addView(FrameLayout frameLayout) {
 
-        return view;
     }
+
+    @Override
+    public void setToolBarTitleName(TextView textView) {
+        textView.setText("帮助");
+    }
+
+    @Override
+    public void setToolBarIcon(ImageView imageView,FrameLayout fm) {
+        fm.setVisibility(View.GONE);
+    }
+
+
 }
