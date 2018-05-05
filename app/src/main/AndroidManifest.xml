@@ -42,6 +42,7 @@
         <activity android:name=".activity.RegisterSMSActivity" />
         <activity android:name=".activity.SetPasswordActivity" />
         <activity android:name=".activity.FindPassWordActivity" />
+        <activity android:name=".activity.AddDevicesTipsActivity" />
         <activity android:name=".activity.AddDevicesActivity"></activity>
     </application>
 

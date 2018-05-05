@@ -1,13 +1,17 @@
 package com.a10835.easywol.activity;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
 
+import com.a10835.easywol.R;
 import com.a10835.easywol.utils.ActivityCollector;
 import com.a10835.easywol.utils.LogUtil;
 
@@ -64,6 +68,19 @@ public abstract class BaseActivity extends AppCompatActivity {
      *设置View data数据
      */
     public abstract void initData();
+
+    /**
+     * android6.0以上标题栏显示为白色，状态栏为白底黑色
+     */
+    public void setWhiteStatusBar(){
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            ((AppCompatActivity) mContext).getWindow()
+                    .getDecorView()
+                    .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            Window window = ((AppCompatActivity) mContext).getWindow();
+            window.setStatusBarColor(getResources().getColor(R.color.white));
+        }
+    }
 
 
 

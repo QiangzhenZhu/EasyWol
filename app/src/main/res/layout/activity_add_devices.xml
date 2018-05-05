@@ -1,9 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.a10835.easywol.activity.AddDevicesActivity">
+    android:orientation="vertical">
+    <android.support.design.widget.AppBarLayout
+        android:background="@color/bg_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            >
+            <TextView
+                android:id="@+id/tv_title_tool_bar"
+                android:text="@string/tool_bar_add_devices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="24sp"
+                android:textColor="#616161"
+                android:textStyle="bold"
+                />
+            <FrameLayout
+                android:id="@+id/fm_tool_bar_icon"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_tool_bar_icon"
+                android:layout_width="50dp"
+                android:layout_height="32dp">
+                <TextView
+                    android:id="@+id/tv_right_title_tool_bar"
+                    android:text="@string/cancel"
+                    android:textColor="@color/dark_white_1"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv_add_devices_top_earth"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/earth_add_devices" />
+        <View
+            android:background="#eeeeee"
+            android:layout_below="@id/iv_add_devices_top_earth"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+        </View>
+       <LinearLayout
+           android:layout_below="@+id/iv_add_devices_top_earth"
+           android:layout_marginLeft="16dp"
+           android:layout_marginRight="16dp"
+           android:layout_marginTop="16dp"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:text="请按以下步骤操作:"
+               android:textColor="@color/colorPrimary"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <TextView
+               android:layout_marginTop="16dp"
+               android:text="@string/tips_add_devices"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+
+       </LinearLayout>
+        <TextView
+            android:id="@+id/btn_add_devices_next"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_add_devices_next"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:text="@string/add_Devices_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+    </RelativeLayout>
+</LinearLayout>

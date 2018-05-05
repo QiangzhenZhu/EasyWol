@@ -16,4 +16,22 @@
     <string name="et_register_set_password">设置8-16位登录密码</string>
     <string name="tv_forget_pass">找回密码</string>
     <string name="tool_bar_homepage">设备</string>
+    <string name="mine_fragment_share">分享轻松唤醒给朋友</string>
+    <string name="mine_fragment_relation">关于我们</string>
+    <string name="mine_fragment_tipping">请我喝可乐</string>
+    <string name="mine_fragment_fead_back">用户反馈</string>
+    <string name="mine_fragment_check_update">检查更新</string>
+    <string name="mine_fragment_sina_weibo">新浪微博</string>
+    <string name="mine_fragment_git_hub">GitHub</string>
+    <string name="mine_fragment_email">邮箱</string>
+    <string name="cancel">取消</string>
+    <string name="tool_bar_add_devices">添加设备</string>
+    <string name="tips_add_devices">1.将手机连接网络\n\n2.填写IP地址、Mac地址等信息、\n\n3.点击唤醒</string>
+    <string name="add_Devices_next">下一步</string>
+    <string name="add_devices_ip">请输入IP地址</string>
+    <string name="add_devices_port">端口号</string>
+    <string name="add_devices_password">密码</string>
+    <string name="add_devices_mac">MAC地址</string>
+    <string name="add_devices_save">保存</string>
+    <string name="add_devices_sub_mask">子网掩码</string>
 </resources>

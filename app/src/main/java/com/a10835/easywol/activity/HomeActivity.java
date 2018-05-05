@@ -1,5 +1,8 @@
 package com.a10835.easywol.activity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
@@ -14,9 +17,11 @@ import com.a10835.easywol.fragment.MineFragment;
 
 public class HomeActivity extends BaseActivity {
     private static final String TAG = "HomeActivity";
+    public static final String SELECTION = "selection";
     private static final int HOMEPAGER_FRAGMENT = 0;
     private static final int ADD_FRAGMENT = 1;
     private static final int MINE_FRAGMENT = 2;
+    private int selection;
 
     private BottomNavigationView mBottomNavigationView;
     private FragmentManager fragmentManager;
@@ -32,6 +37,8 @@ public class HomeActivity extends BaseActivity {
         mContext = this;
         initView();
         initData1();
+        selection = getIntent().getIntExtra(SELECTION,0);
+        setSelection(selection);
 
     }
 
@@ -47,7 +54,7 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setSelection(HOMEPAGER_FRAGMENT);
+
     }
 
     //初始化视图
@@ -121,6 +128,12 @@ public class HomeActivity extends BaseActivity {
        // if (mineFragment != null){
             fragmentManager.beginTransaction().hide(mineFragment).commit();
         //}
+    }
+
+    public static Intent newIntent(Context context,int selection){
+        Intent intent = new Intent(context,HomeActivity.class);
+        intent.putExtra(SELECTION,selection);
+        return intent;
     }
 
 

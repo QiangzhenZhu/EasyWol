@@ -30,6 +30,10 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /**
+         * android6.0以上标题栏显示为白色，状态栏为白底黑色
+         */
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
             ((AppCompatActivity) getActivity()).getWindow()
                     .getDecorView()

@@ -43,6 +43,7 @@ public class XEditText extends AppCompatEditText implements View.OnFocusChangeLi
     public void init(){
         deleteDrawable = getCompoundDrawables()[2];
         if (deleteDrawable == null){
+            //R.drawable.icon_edit_delete
             deleteDrawable = getResources().getDrawable(R.drawable.icon_edit_delete);
         }
         deleteDrawable.setBounds(0,0,48,48);
@@ -105,4 +106,13 @@ public class XEditText extends AppCompatEditText implements View.OnFocusChangeLi
         animation.setDuration(1000);
         startAnimation(animation);
     }
+
+    public void setDeleteDrawable(){
+        deleteDrawable = getResources().getDrawable(R.drawable.icon_edit_delete_1);
+        deleteDrawable.setBounds(0,0,48,48);
+        setDeleteDrawableVisible(deleteDrawable,false);
+    }
+
+
+
 }
