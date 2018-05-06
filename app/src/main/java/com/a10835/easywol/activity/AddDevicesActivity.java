@@ -1,10 +1,7 @@
 package com.a10835.easywol.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputFilter;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,11 +34,14 @@ public class AddDevicesActivity extends BaseActivity implements View.OnClickList
     TextView btnAddDevicesSave;
     @BindView(R.id.tv_right_title_tool_bar)
     TextView tvRightTitleToolBar;
+    @BindView(R.id.et_add_devices_name)
+    XEditText etAddDevicesName;
     private String ip;
     private String port;
     private String mac;
     private String password;
     private String subnetmask;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,30 +85,34 @@ public class AddDevicesActivity extends BaseActivity implements View.OnClickList
         }
     }
 
-    public void save(){
+    public void save() {
         ip = etAddDevicesIp.getText().toString().trim();
         port = etAddDevicesPort.getText().toString().trim();
         password = etAddDevicesPassword.getText().toString().trim();
         mac = etAddDevicesMac.getText().toString().trim();
         subnetmask = etAddDevicesSubnetMask.getText().toString().trim();
-        if (TextUtils.isEmpty(ip)){
+        name = etAddDevicesName.getText().toString().trim();
+        if (TextUtils.isEmpty(ip)) {
             etAddDevicesIp.showSharkAnimotion();
             return;
-        } else if (TextUtils.isEmpty(port)){
+        } else if (TextUtils.isEmpty(port)) {
             etAddDevicesPort.showSharkAnimotion();
             return;
         /*} else if (TextUtils.isEmpty(password)){
             etAddDevicesPassword.showSharkAnimotion();
             return;*/
-        } else if (TextUtils.isEmpty(mac)){
+        } else if (TextUtils.isEmpty(mac)) {
             etAddDevicesMac.showSharkAnimotion();
             return;
         /*} else if (TextUtils.isEmpty(subnetmask)){
             etAddDevicesSubnetMask.showSharkAnimotion();
             return;*/
+        }else if (TextUtils.isEmpty(name)){
+            etAddDevicesName.showSharkAnimotion();
+            return;
         } else {
             final ProgressDialog dialog = new ProgressDialog();
-            dialog.show(getSupportFragmentManager(),"AddDevices");
+            dialog.show(getSupportFragmentManager(), "AddDevices");
             BmobUser user = BmobUser.getCurrentUser();
             final Devices devices = new Devices();
             devices.setIp(ip);
@@ -117,19 +121,20 @@ public class AddDevicesActivity extends BaseActivity implements View.OnClickList
             devices.setPassword(password);
             devices.setSubnetmaster(subnetmask);
             devices.setUser(user);
+            devices.setName(name);
             devices.save(new SaveListener<String>() {
                 @Override
                 public void done(String s, BmobException e) {
-                    if (e == null){
+                    if (e == null) {
                         dialog.dismiss();
                         LogUtil.setTag("addDevices");
-                        LogUtil.d("add Devices success"+ip+":"+ip);
-                        startActivity(HomeActivity.newIntent(mContext,0));
-                    }else {
+                        LogUtil.d("add Devices success" + ip + ":" + ip);
+                        startActivity(HomeActivity.newIntent(mContext, 0));
+                    } else {
                         dialog.dismiss();
                         LogUtil.setTag("addDevices");
                         LogUtil.d("add Devices error");
-                        ToastUtil.show(mContext,e.getMessage());
+                        ToastUtil.show(mContext, e.getMessage());
                     }
                 }
             });

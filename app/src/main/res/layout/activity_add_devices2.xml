@@ -69,7 +69,6 @@
                 android:textColor="@color/dark_white_1"
                 android:hint="@string/add_devices_ip"
                 android:singleLine="true"
-                android:maxLength="11"
                 android:textCursorDrawable="@drawable/xedit_curson_drawable_dark_white"
                 android:theme="@style/XEditTextTheme_1"
                 android:textColorHint="@color/dark_white_1"/>
@@ -87,7 +86,6 @@
                     android:textColor="@color/dark_white_1"
                     android:hint="@string/add_devices_port"
                     android:singleLine="true"
-                    android:maxLength="11"
                     android:textCursorDrawable="@drawable/xedit_curson_drawable_dark_white"
                     android:theme="@style/XEditTextTheme_1"
                     android:textColorHint="@color/dark_white_1"/>
@@ -100,7 +98,6 @@
                     android:textColor="@color/dark_white_1"
                     android:hint="@string/add_devices_password"
                     android:singleLine="true"
-                    android:maxLength="11"
                     android:textCursorDrawable="@drawable/xedit_curson_drawable_dark_white"
                     android:theme="@style/XEditTextTheme_1"
                     android:textColorHint="@color/dark_white_1"/>
@@ -113,22 +110,38 @@
                 android:textColor="@color/dark_white_1"
                 android:hint="@string/add_devices_mac"
                 android:singleLine="true"
-                android:maxLength="11"
                 android:textCursorDrawable="@drawable/xedit_curson_drawable_dark_white"
                 android:theme="@style/XEditTextTheme_1"
                 android:textColorHint="@color/dark_white_1"/>
-            <com.a10835.easywol.view.XEditText
-                android:id="@+id/et_add_devices_subnet_mask"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="@color/dark_white_1"
-                android:hint="@string/add_devices_sub_mask"
-                android:singleLine="true"
-                android:maxLength="11"
-                android:textCursorDrawable="@drawable/xedit_curson_drawable_dark_white"
-                android:theme="@style/XEditTextTheme_1"
-                android:textColorHint="@color/dark_white_1"/>
+                android:layout_height="wrap_content">
+                <com.a10835.easywol.view.XEditText
+                    android:id="@+id/et_add_devices_subnet_mask"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/dark_white_1"
+                    android:hint="@string/add_devices_sub_mask"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/xedit_curson_drawable_dark_white"
+                    android:theme="@style/XEditTextTheme_1"
+                    android:textColorHint="@color/dark_white_1"/>
+                <com.a10835.easywol.view.XEditText
+                    android:id="@+id/et_add_devices_name"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/dark_white_1"
+                    android:hint="@string/add_devices_name"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/xedit_curson_drawable_dark_white"
+                    android:theme="@style/XEditTextTheme_1"
+                    android:textColorHint="@color/dark_white_1"/>
+            </LinearLayout>
 
 
         </LinearLayout>

@@ -54,20 +54,20 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         Devices devices = devicesList.get(position);
         holder.mNameText.setText(devices.getName()+"");
         holder.mIP.setText(devices.getIp()+"");
         holder.mActive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listner.onActiveClickListner();
+                listner.onActiveClickListner(position);
             }
         });
         holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listner.onItemClickListner();
+                listner.onItemClickListner(position);
             }
         });
 
@@ -78,8 +78,8 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
         return devicesList.size();
     }
     public interface onActiveListner{
-         void onActiveClickListner();
-         void onItemClickListner();
+         void onActiveClickListner(int position);
+         void onItemClickListner(int position);
     }
 
 }

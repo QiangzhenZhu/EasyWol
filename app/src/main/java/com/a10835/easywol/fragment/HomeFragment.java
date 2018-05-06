@@ -23,6 +23,7 @@ import com.a10835.easywol.activity.AddDevicesTipsActivity;
 import com.a10835.easywol.adapter.DevicesAdapter;
 import com.a10835.easywol.adapter.SpaceItemDecoration;
 import com.a10835.easywol.bean.Devices;
+import com.a10835.easywol.common.http.udp.UdpHelper;
 import com.a10835.easywol.utils.LogUtil;
 import com.a10835.easywol.view.ToastUtil;
 
@@ -146,12 +147,21 @@ public class HomeFragment extends BaseFragment {
         if (adapter == null) {
             adapter = new DevicesAdapter(devicesList, new DevicesAdapter.onActiveListner() {
                 @Override
-                public void onActiveClickListner() {
+                public void onActiveClickListner(int position) {
+                    final Devices devices = devicesList.get(position);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            UdpHelper.send(devices.getIp(),devices.getPort(),devices.getMac());
+                        }
+                    }).start();
+
+                    ToastUtil.show(mContext,"唤醒");
 
                 }
 
                 @Override
-                public void onItemClickListner() {
+                public void onItemClickListner(int position) {
 
                 }
             });
