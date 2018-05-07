@@ -30,17 +30,9 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setWhiteBar();
 
-        /**
-         * android6.0以上标题栏显示为白色，状态栏为白底黑色
-         */
-        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
-            ((AppCompatActivity) getActivity()).getWindow()
-                    .getDecorView()
-                    .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-            Window window = ((AppCompatActivity) getActivity()).getWindow();
-            window.setStatusBarColor(getResources().getColor(R.color.white));
-        }
+
 
     }
 
@@ -58,6 +50,18 @@ public abstract class BaseFragment extends Fragment {
         setToolBarTitleName(mToolBarTitle);
         setToolBarIcon(mToolBarIcon,fmIcon);
         return view;
+    }
+    /**
+     * android6.0以上标题栏显示为白色，状态栏为白底黑色
+     */
+    public void setWhiteBar(){
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            ((AppCompatActivity) getActivity()).getWindow()
+                    .getDecorView()
+                    .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            Window window = ((AppCompatActivity) getActivity()).getWindow();
+            window.setStatusBarColor(getResources().getColor(R.color.white));
+        }
     }
 
     /**
