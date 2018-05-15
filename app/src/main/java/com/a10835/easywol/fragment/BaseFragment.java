@@ -49,6 +49,8 @@ public abstract class BaseFragment extends Fragment {
         addView(frameLayout);
         setToolBarTitleName(mToolBarTitle);
         setToolBarIcon(mToolBarIcon,fmIcon);
+        //设置事件监听
+        setEvent();
         return view;
     }
     /**
@@ -79,4 +81,8 @@ public abstract class BaseFragment extends Fragment {
      */
     public abstract void setToolBarIcon( ImageView imageView,FrameLayout frameLayout);
 
+    /**
+     * 事件监听
+     */
+    public abstract void setEvent();
 }

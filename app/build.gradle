@@ -52,9 +52,3 @@ dependencies {
     compile 'org.raphets:roundimageview:1.2.0'
     implementation 'com.android.support:design:26.1.0'
 }
-
-
-
-
-
-

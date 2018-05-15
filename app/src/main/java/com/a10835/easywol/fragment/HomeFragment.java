@@ -111,6 +111,11 @@ public class HomeFragment extends BaseFragment {
         });
     }
 
+    @Override
+    public void setEvent() {
+
+    }
+
     public void requestData() {
         BmobUser user = BmobUser.getCurrentUser();
         BmobQuery<Devices> query = new BmobQuery<Devices>();

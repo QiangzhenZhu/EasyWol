@@ -59,5 +59,10 @@ public class HelpFragment extends BaseFragment {
         fm.setVisibility(View.GONE);
     }
 
+    @Override
+    public void setEvent() {
+
+    }
+
 
 }

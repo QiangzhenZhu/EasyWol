@@ -14,7 +14,7 @@ import cn.bmob.v3.BmobSMS;
  */
 
 public class EasyWolApplication extends Application {
-    public static EasyWolApplication instance;
+    private static EasyWolApplication instance;
     @Override
     public void onCreate() {
         super.onCreate();
