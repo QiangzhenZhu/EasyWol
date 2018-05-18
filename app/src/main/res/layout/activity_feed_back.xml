@@ -55,6 +55,7 @@
         android:layout_marginTop="16dp"
         android:padding="8dp"
         android:gravity="top"
+        android:textCursorDrawable="@drawable/cursor_feed_back_drawable"
         android:background="@drawable/bg_feed_back_edit_drawable"
         android:hint="请详细描述您遇到的问题（不超过150字）"
 
@@ -68,6 +69,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
+        android:textCursorDrawable="@drawable/cursor_feed_back_drawable"
         android:hint="电子邮箱（选填）"
         />
 

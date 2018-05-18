@@ -1,9 +1,10 @@
 package com.a10835.easywol.fragment;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import com.a10835.easywol.R;
 import com.a10835.easywol.activity.FeedBackActivity;
 import com.a10835.easywol.activity.UserInfoActivity;
+import com.a10835.easywol.view.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +45,16 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     LinearLayout llFragmentMineUserInfo;
     @BindView(R.id.ll_fragment_mine_git)
     LinearLayout llFragmentMineGit;
+    @BindView(R.id.tv_mine_fragment_phone)
+    TextView tvMineFragmentPhone;
+    @BindView(R.id.tv_fragment_mine_version)
+    TextView tvFragmentMineVersion;
+    @BindView(R.id.tv_fragment_mine_sina)
+    TextView tvFragmentMineSina;
+    @BindView(R.id.tv_fragment_mine_email)
+    TextView tvFragmentMineEmail;
+    @BindView(R.id.tv_fragment_mine_git)
+    TextView tvFragmentMineGit;
     private Context mContext;
 
     @Override
@@ -104,7 +116,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.ll_fragment_mine_user_info:
                 Intent intent = UserInfoActivity.newIntent(mContext);
                 startActivity(intent);
@@ -123,22 +135,28 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 break;
 
             case R.id.ll_fragment_mine_sinaweibo:
-
-
+                saveTextToClipBoardManager(tvFragmentMineSina.getText().toString().trim(), "\"@喜盈盈虾条\"以复制到剪贴板，打开微博搜索并关注");
                 break;
             case R.id.ll_fragment_mine_git:
-
+                saveTextToClipBoardManager(tvFragmentMineGit.getText().toString().trim(), "\"QiangzhenZhu\"以复制到剪贴板");
                 break;
 
             case R.id.ll_fragment_mine_email:
-
+                saveTextToClipBoardManager(tvFragmentMineEmail.getText().toString().trim(), "\"邮箱\"以复制到剪贴板");
                 break;
             default:
                 break;
 
 
-
-
         }
     }
+
+    public void saveTextToClipBoardManager(String text, String toast) {
+        ClipboardManager cm = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clipData = ClipData.newPlainText("EASYWOL", text);
+        cm.setPrimaryClip(clipData);
+        ToastUtil.show(mContext, toast);
+    }
+
+
 }

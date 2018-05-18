@@ -1,5 +1,8 @@
 package com.a10835.easywol.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobUser;
@@ -8,7 +11,7 @@ import cn.bmob.v3.BmobUser;
  * Created by 10835 on 2018/5/5.
  */
 
-public class Devices extends BmobObject {
+public class Devices extends BmobObject  {
     private String ip;
     private String port;
     private String mac;
@@ -16,6 +19,9 @@ public class Devices extends BmobObject {
     private String subnetmaster;
     private BmobUser user;
     private String name;
+
+
+
 
     public String getName() {
         return name;
@@ -72,4 +78,6 @@ public class Devices extends BmobObject {
     public void setSubnetmaster(String subnetmaster) {
         this.subnetmaster = subnetmaster;
     }
+
+
 }

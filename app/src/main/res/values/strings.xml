@@ -20,7 +20,7 @@
     <string name="mine_fragment_relation">关于我们</string>
     <string name="mine_fragment_tipping">请我喝可乐</string>
     <string name="mine_fragment_fead_back">用户反馈</string>
-    <string name="mine_fragment_check_update">检查更新</string>
+    <string name="mine_fragment_check_update">当前版本</string>
     <string name="mine_fragment_sina_weibo">新浪微博</string>
     <string name="mine_fragment_git_hub">GitHub</string>
     <string name="mine_fragment_email">邮箱</string>
