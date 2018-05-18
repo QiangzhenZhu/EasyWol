@@ -44,7 +44,9 @@
         <activity android:name=".activity.FindPassWordActivity" />
         <activity android:name=".activity.AddDevicesTipsActivity" />
         <activity android:name=".activity.AddDevicesActivity" />
-        <activity android:name=".activity.UserInfoActivity"></activity>
+        <activity android:name=".activity.UserInfoActivity" />
+        <activity android:name=".activity.HelpInfoWebViewActivity" />
+        <activity android:name=".activity.FeedBackActivity"></activity>
     </application>
 
 </manifest>

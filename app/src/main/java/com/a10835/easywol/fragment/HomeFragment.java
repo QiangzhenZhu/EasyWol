@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -52,6 +54,7 @@ public class HomeFragment extends BaseFragment {
     private List<Devices> devicesList;
     private DevicesAdapter adapter;
 
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +68,6 @@ public class HomeFragment extends BaseFragment {
             devicesList = new ArrayList<>();
 
         }
-
 
     }
 
@@ -95,6 +97,12 @@ public class HomeFragment extends BaseFragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        requestData();
+    }
+
+    @Override
     public void setToolBarTitleName(TextView textView) {
         textView.setText("设备");
     }
@@ -111,7 +119,7 @@ public class HomeFragment extends BaseFragment {
         });
     }
 
-    @Override
+
     public void setEvent() {
 
     }
@@ -162,7 +170,7 @@ public class HomeFragment extends BaseFragment {
                         }
                     }).start();
 
-                    ToastUtil.show(mContext,"唤醒");
+
 
                 }
 

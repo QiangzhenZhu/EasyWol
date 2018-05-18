@@ -3,6 +3,7 @@ package com.a10835.easywol.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +12,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.a10835.easywol.R;
+import com.a10835.easywol.activity.FeedBackActivity;
 import com.a10835.easywol.activity.UserInfoActivity;
 
 import butterknife.BindView;
@@ -24,7 +25,7 @@ import butterknife.Unbinder;
  * Created by 10835 on 2018/4/15.
  */
 
-public class MineFragment extends BaseFragment {
+public class MineFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.ll_fragment_mine_share)
     LinearLayout llFragmentMineShare;
     @BindView(R.id.ll_fragment_mine_tipping)
@@ -40,13 +41,17 @@ public class MineFragment extends BaseFragment {
     Unbinder unbinder;
     @BindView(R.id.ll_fragment_mine_user_info)
     LinearLayout llFragmentMineUserInfo;
+    @BindView(R.id.ll_fragment_mine_git)
+    LinearLayout llFragmentMineGit;
     private Context mContext;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
+
     }
+
 
     @Override
     public void addView(FrameLayout frameLayout) {
@@ -67,16 +72,17 @@ public class MineFragment extends BaseFragment {
         imageView.setImageResource(R.drawable.ic_news_tool_bar);
     }
 
-    @Override
+
     public void setEvent() {
-        //跳转到个人信息页
-        /*llFragmentMineUserInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = UserInfoActivity.newIntent(mContext);
-                startActivity(intent);
-            }
-        });*/
+
+        llFragmentMineUserInfo.setOnClickListener(this);
+        llFragmentMineShare.setOnClickListener(this);
+        llFragmentMineFeadBack.setOnClickListener(this);
+        llFragmentMineCheckUpdate.setOnClickListener(this);
+        llFragmentMineSinaweibo.setOnClickListener(this);
+        llFragmentMineGit.setOnClickListener(this);
+        llFragmentMineEmail.setOnClickListener(this);
+        llFragmentMineTipping.setOnClickListener(this);
 
     }
 
@@ -85,6 +91,7 @@ public class MineFragment extends BaseFragment {
         // TODO: inflate a fragment view
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         unbinder = ButterKnife.bind(this, rootView);
+        setEvent();
         return rootView;
     }
 
@@ -92,5 +99,46 @@ public class MineFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.ll_fragment_mine_user_info:
+                Intent intent = UserInfoActivity.newIntent(mContext);
+                startActivity(intent);
+                break;
+            case R.id.ll_fragment_mine_share:
+
+                break;
+            case R.id.ll_fragment_mine_tipping:
+
+                break;
+            case R.id.ll_fragment_mine_fead_back:
+                startActivity(new Intent(FeedBackActivity.newIntent(mContext)));
+                break;
+            case R.id.ll_fragment_mine_check_update:
+
+                break;
+
+            case R.id.ll_fragment_mine_sinaweibo:
+
+
+                break;
+            case R.id.ll_fragment_mine_git:
+
+                break;
+
+            case R.id.ll_fragment_mine_email:
+
+                break;
+            default:
+                break;
+
+
+
+
+        }
     }
 }

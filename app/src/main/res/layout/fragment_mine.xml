@@ -14,12 +14,14 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
             android:id="@+id/ll_fragment_mine_user_info"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_fragment_mine_card_view"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <org.raphets.roundimageview.RoundImageView
@@ -65,8 +67,9 @@
                 android:layout_height="wrap_content">
                 <LinearLayout
                     android:id="@+id/ll_fragment_mine_share"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:background="@drawable/bg_fragment_mine_card_view"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
@@ -85,8 +88,9 @@
                 </View>
                 <LinearLayout
                     android:id="@+id/ll_fragment_mine_tipping"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:background="@drawable/bg_fragment_mine_card_view"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
@@ -115,8 +119,9 @@
 
                 <LinearLayout
                     android:id="@+id/ll_fragment_mine_fead_back"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:background="@drawable/bg_fragment_mine_card_view"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
@@ -142,8 +147,9 @@
                 </View>
                 <LinearLayout
                     android:id="@+id/ll_fragment_mine_check_update"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:background="@drawable/bg_fragment_mine_card_view"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
@@ -192,8 +198,9 @@
                 android:layout_height="wrap_content">
                 <LinearLayout
                     android:id="@+id/ll_fragment_mine_sinaweibo"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:background="@drawable/bg_fragment_mine_card_view"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
@@ -219,8 +226,10 @@
                     android:layout_height="1dp">
                 </View>
                 <LinearLayout
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:id="@+id/ll_fragment_mine_git"
+                    android:background="@drawable/bg_fragment_mine_card_view"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
@@ -247,8 +256,9 @@
 
                 <LinearLayout
                     android:id="@+id/ll_fragment_mine_email"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:background="@drawable/bg_fragment_mine_card_view"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView

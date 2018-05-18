@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_background"
+    tools:context=".activity.UserInfoActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:background="#ffffff"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        >
+        <TextView
+            android:id="@+id/tv_title_tool_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            android:textColor="#616161"
+            android:textStyle="bold"
+            />
+        <RelativeLayout
+            android:id="@+id/fm_tool_bar_icon"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_tool_bar_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp">
+            <TextView
+                android:id="@+id/iv_icon_tool_bar"
+                android:paddingRight="8dp"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#616161"
+                android:drawableLeft="@drawable/ic_user_info_back"
+                android:text="@string/back"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+    <WebView
+        android:id="@+id/web_view_help"
+        android:background="@color/bg_background"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </WebView>
+
+</LinearLayout>

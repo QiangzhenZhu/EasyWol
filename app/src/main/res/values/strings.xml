@@ -35,4 +35,6 @@
     <string name="add_devices_save">保存</string>
     <string name="add_devices_sub_mask">子网掩码</string>
     <string name="add_devices_name">名称</string>
+    <string name="back">返回</string>
+    <string name="user_exit">退出登录</string>
 </resources>
